@@ -40,6 +40,7 @@ Replace `YOUR_USERNAME` with your actual GitHub username.
 ## Optimizations for GitHub Pages
 
 ✅ **Already Completed:**
+
 - Consolidated CSS files into `main.css` for faster loading
 - Consolidated JavaScript into `main.js`
 - Created root-level `index.html` that redirects to `src/index.html`
@@ -70,15 +71,18 @@ The GitHub Action will automatically deploy your changes to GitHub Pages!
 ## Troubleshooting
 
 ### Site Not Loading?
+
 - Check that GitHub Pages is enabled in Settings > Pages
 - Verify the workflow completed successfully in the Actions tab
 - Make sure the source is set to "GitHub Actions"
 
 ### Images Not Showing?
+
 - All image paths use relative paths, so they should work
 - If issues persist, check the browser console for 404 errors
 
 ### CSS/JS Not Loading?
+
 - Clear your browser cache
 - Check that `main.css` and `main.js` exist in the `src/` folder
 - Verify the file references in the HTML files
@@ -113,6 +117,7 @@ AGmedia.com/
 ## Performance Tips
 
 The site is already optimized for GitHub Pages with:
+
 - Single CSS file (reduces HTTP requests)
 - Single JS file (reduces HTTP requests)
 - Responsive images
@@ -122,6 +127,7 @@ The site is already optimized for GitHub Pages with:
 ## Questions?
 
 If you run into issues:
+
 1. Check the GitHub Actions logs in the "Actions" tab
 2. Verify all paths are relative (no absolute URLs)
 3. Make sure all referenced files exist in the repository

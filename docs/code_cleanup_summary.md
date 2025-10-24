@@ -7,6 +7,7 @@ This document summarizes the codebase cleanup performed on the AGmedia website p
 ## CSS Optimization
 
 1. **Consolidated CSS Files**
+
    - Combined 4 separate CSS files into a single `main.css` file:
      - `styles.css` (global styles)
      - `additional-styles.css` (component styles)
@@ -14,6 +15,7 @@ This document summarizes the codebase cleanup performed on the AGmedia website p
      - `mobile-nav.css` (mobile navigation)
 
 2. **Organized CSS Structure**
+
    - Added clear section comments to improve navigation
    - Grouped related styles together logically
    - Eliminated duplicate rules
@@ -27,12 +29,14 @@ This document summarizes the codebase cleanup performed on the AGmedia website p
 ## JavaScript Optimization
 
 1. **Code Refactoring**
+
    - Replaced `app.js` with optimized `main.js`
    - Moved functionality into separate, well-named functions
    - Added comprehensive comments
    - Improved code structure for better maintainability
 
 2. **Functional Organization**
+
    - Separated functionality into distinct, purpose-focused functions
    - Clear function naming for better code readability
    - Added JSDoc comments for function documentation
@@ -51,10 +55,12 @@ This document summarizes the codebase cleanup performed on the AGmedia website p
 ## Benefits of Cleanup
 
 1. **Improved Performance**
+
    - Reduced HTTP requests by consolidating CSS files
    - Better organized code for faster parsing
 
 2. **Enhanced Maintainability**
+
    - Clearer code structure
    - Better commented functions
    - Logical organization
@@ -68,6 +74,7 @@ This document summarizes the codebase cleanup performed on the AGmedia website p
 ## Files Changed
 
 - Created new files:
+
   - `/src/main.css` (consolidated CSS)
   - `/src/main.js` (optimized JavaScript)
 
@@ -81,10 +88,12 @@ This document summarizes the codebase cleanup performed on the AGmedia website p
 ## Next Steps for Further Optimization
 
 1. **Image Optimization**
+
    - Consider implementing image lazy loading for better performance
    - Standardize image sizes and formats
 
 2. **Advanced CSS Techniques**
+
    - Consider implementing CSS custom properties for more theming flexibility
    - Explore CSS Grid for more advanced layouts
 

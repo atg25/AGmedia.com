@@ -15,7 +15,7 @@ AGmedia specializes in creating simple, effective websites for small businesses.
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop devices
 - **Interactive Elements**: Testimonial slider, contact forms, and smooth scrolling
 - **Mobile Navigation**: Clean hamburger menu for mobile users
-- **Multiple Pages**: 
+- **Multiple Pages**:
   - Home
   - Services
   - Our Approach
@@ -34,20 +34,23 @@ AGmedia specializes in creating simple, effective websites for small businesses.
 ### View Locally
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/AGmedia.com.git
    ```
 
 2. Navigate to the project directory:
+
    ```bash
    cd AGmedia.com
    ```
 
 3. Open `src/index.html` in your browser or use a local server:
+
    ```bash
    # Using Python
    python -m http.server 8000
-   
+
    # Using Node.js http-server
    npx http-server
    ```
@@ -79,7 +82,7 @@ AGmedia.com/
 ## 🎨 Design Principles
 
 - **Brand Archetype**: Caregiver - supportive, reliable, and nurturing
-- **Color Palette**: 
+- **Color Palette**:
   - Primary: #4a6fdc (Professional Blue)
   - Secondary: #2c3e50 (Dark Slate)
   - Accent: #3498db (Bright Blue)
@@ -104,6 +107,7 @@ This project is part of an academic assignment at NJIT.
 ## 👤 Author
 
 **Andrew Gard**
+
 - GitHub: [@agard](https://github.com/agard)
 - Institution: New Jersey Institute of Technology (NJIT)
 - Course: IS373
