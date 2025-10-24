@@ -1,0 +1,31 @@
+# Persona Worksheet
+
+- Name: "Sam the Small Business Owner"
+- Demographics: Local, 35–55 years old, small retail/service business owner
+- Jobs-To-Be-Done:
+  - Need a reliable website that brings in customers
+  - Want to focus on their business, not technology issues
+  - Looking for affordable web solutions that fit a bootstrapped budget
+- Pains/Fears:
+  - Overwhelmed by technical aspects of websites
+  - Budget constraints as a small business
+  - Limited time to manage online presence
+- Gains/Desired Outcomes:
+  - More customers through their website
+  - Reliable online presence
+  - Peace of mind with ongoing support
+- Objections:
+  - Cost concerns
+  - Unsure about ROI
+  - Limited time to engage in the process
+- Buying Triggers:
+  - Referrals from other business owners
+  - Free consultation showing clear value
+  - Proof of results from similar businesses
+- Where They Live Online:
+  - Facebook groups
+  - LinkedIn
+  - Local business forums
+- Proof Needed:
+  - Case studies
+  - Testimonials from similar local businesses
