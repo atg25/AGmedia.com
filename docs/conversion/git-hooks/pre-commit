@@ -1,0 +1,55 @@
+#!/bin/sh
+# AGmedia Single-Page Conversion - Pre-commit Hook
+# Ensures code quality before each commit
+
+echo "🔍 Running pre-commit checks..."
+
+# Check for console.log in JavaScript files
+if git diff --cached --name-only | grep -q '\.js$'; then
+  if git diff --cached | grep -E '^\+.*console\.log'; then
+    echo "❌ Error: console.log() found in staged files"
+    echo "   Remove console.log statements before committing to production"
+    exit 1
+  fi
+fi
+
+# Check for debugger statements in JS files only
+if git diff --cached --name-only | grep -q '\.js$'; then
+  if git diff --cached -- '*.js' | grep -E '^\+.*debugger'; then
+    echo "❌ Error: debugger statement found in JavaScript files"
+    echo "   Remove debugger statements before committing"
+    exit 1
+  fi
+fi
+
+# Check for TODO/FIXME without proper formatting
+if git diff --cached | grep -E '^\+.*(TODO|FIXME)' | grep -v -E '(TODO:|FIXME:)'; then
+  echo "⚠️  Warning: TODO/FIXME should be formatted as 'TODO: description' or 'FIXME: description'"
+fi
+
+# Check for merge conflict markers
+if git diff --cached | grep -E '^\+.*(<<<<<<<|=======|>>>>>>>)'; then
+  echo "❌ Error: Merge conflict markers found in staged files"
+  echo "   Resolve conflicts before committing"
+  exit 1
+fi
+
+# Check for trailing whitespace (warning only)
+if git diff --cached --check 2>&1 | grep -q 'trailing whitespace'; then
+  echo "⚠️  Warning: Trailing whitespace detected"
+  echo "   Consider removing trailing whitespace for cleaner code"
+fi
+
+# Check for large files (> 1MB)
+for file in $(git diff --cached --name-only); do
+  if [ -f "$file" ]; then
+    size=$(du -k "$file" | cut -f1)
+    if [ "$size" -gt 1024 ]; then
+      echo "⚠️  Warning: Large file detected: $file (${size}KB)"
+      echo "   Consider optimizing or using Git LFS for files > 1MB"
+    fi
+  fi
+done
+
+echo "✅ Pre-commit checks passed"
+exit 0

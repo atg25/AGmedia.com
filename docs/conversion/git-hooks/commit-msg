@@ -1,0 +1,72 @@
+#!/bin/sh
+# AGmedia Single-Page Conversion - Commit Message Hook
+# Enforces conventional commit message format
+
+commit_msg_file=$1
+commit_msg=$(cat "$commit_msg_file")
+
+# Color codes for output
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+# Check if commit message follows conventional format
+# Format: <type>(<scope>): <subject>
+# Example: feat(nav): add scroll-spy functionality
+
+if ! echo "$commit_msg" | grep -qE '^(feat|fix|docs|style|refactor|perf|test|chore|a11y|seo|deploy)(\([a-z]+\))?: .{1,50}'; then
+  echo "${RED}❌ Error: Invalid commit message format${NC}"
+  echo ""
+  echo "Expected format: ${GREEN}<type>(<scope>): <subject>${NC}"
+  echo ""
+  echo "Valid types:"
+  echo "  ${GREEN}feat${NC}     - New feature"
+  echo "  ${GREEN}fix${NC}      - Bug fix"
+  echo "  ${GREEN}docs${NC}     - Documentation only"
+  echo "  ${GREEN}style${NC}    - Formatting, missing semicolons, etc."
+  echo "  ${GREEN}refactor${NC} - Code restructuring"
+  echo "  ${GREEN}perf${NC}     - Performance improvement"
+  echo "  ${GREEN}test${NC}     - Adding tests"
+  echo "  ${GREEN}chore${NC}    - Build process or tool changes"
+  echo "  ${GREEN}a11y${NC}     - Accessibility improvements"
+  echo "  ${GREEN}seo${NC}      - SEO improvements"
+  echo "  ${GREEN}deploy${NC}   - Deployment changes"
+  echo ""
+  echo "Subject rules:"
+  echo "  • Use imperative mood (${GREEN}'add'${NC} not ${RED}'added'${NC})"
+  echo "  • Don't capitalize first letter"
+  echo "  • No period at the end"
+  echo "  • Maximum 50 characters"
+  echo ""
+  echo "Examples:"
+  echo "  ${GREEN}feat: add scroll-spy for navigation${NC}"
+  echo "  ${GREEN}fix(nav): prevent mobile menu overlap${NC}"
+  echo "  ${GREEN}docs: update README with new structure${NC}"
+  echo "  ${GREEN}perf: optimize image loading with lazy load${NC}"
+  echo ""
+  exit 1
+fi
+
+# Check if subject starts with capital letter (should be lowercase)
+subject=$(echo "$commit_msg" | head -n1 | sed 's/^[^:]*: //')
+if echo "$subject" | grep -qE '^[A-Z]'; then
+  echo "${YELLOW}⚠️  Warning: Subject should start with lowercase${NC}"
+  echo "   Change: '$(echo "$subject" | head -c 30)...' to '$(echo "$subject" | head -c 1 | tr '[:upper:]' '[:lower:]')$(echo "$subject" | cut -c 2- | head -c 29)...'"
+fi
+
+# Check if subject ends with period
+if echo "$subject" | grep -qE '\.$'; then
+  echo "${YELLOW}⚠️  Warning: Subject should not end with a period${NC}"
+fi
+
+# Check subject line length
+subject_line=$(echo "$commit_msg" | head -n1)
+if [ ${#subject_line} -gt 72 ]; then
+  echo "${YELLOW}⚠️  Warning: Subject line is ${#subject_line} characters (recommended: < 72)${NC}"
+  echo "   Consider shortening your commit message"
+fi
+
+# Success message
+echo "${GREEN}✅ Commit message format is valid${NC}"
+exit 0
