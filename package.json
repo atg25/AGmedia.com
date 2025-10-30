@@ -1,0 +1,27 @@
+{
+  "name": "agmedia-website",
+  "version": "2.0.0",
+  "description": "AGmedia - Web Solutions for Small Businesses",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint:js": "eslint src/**/*.js",
+    "lint:css": "stylelint src/**/*.css",
+    "lint": "npm run lint:js && npm run lint:css",
+    "serve": "npx live-server src --port=8000"
+  },
+  "keywords": [
+    "web",
+    "design",
+    "small-business"
+  ],
+  "author": "Andrew Gard",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "eslint": "^9.14.0",
+    "globals": "^16.4.0",
+    "stylelint": "^16.10.0",
+    "stylelint-config-standard": "^36.0.1"
+  }
+}
