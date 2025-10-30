@@ -113,6 +113,7 @@ function initTestimonialSlider() {
 
     // Auto-rotate testimonials every 5 seconds
     let currentTestimonial = 0;
+    let autoRotateInterval;
 
     function rotateTestimonials() {
       currentTestimonial = (currentTestimonial + 1) % testimonials.length;
@@ -122,8 +123,27 @@ function initTestimonialSlider() {
       showTestimonial(targetId);
     }
 
-    // Set interval for auto-rotation
-    setInterval(rotateTestimonials, 5000);
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    // Only auto-rotate if user doesn't prefer reduced motion
+    if (!prefersReducedMotion) {
+      autoRotateInterval = setInterval(rotateTestimonials, 5000);
+
+      // Pause auto-rotation on hover
+      const testimonialSlider = document.querySelector(".testimonial-slider");
+      if (testimonialSlider) {
+        testimonialSlider.addEventListener("mouseenter", function () {
+          clearInterval(autoRotateInterval);
+        });
+
+        testimonialSlider.addEventListener("mouseleave", function () {
+          autoRotateInterval = setInterval(rotateTestimonials, 5000);
+        });
+      }
+    }
   }
 
   /**
@@ -174,3 +194,4 @@ function toggleMobileNav() {
   mobileNav.classList.toggle("active");
   document.body.classList.toggle("no-scroll");
 }
+

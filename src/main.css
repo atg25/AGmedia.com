@@ -506,6 +506,21 @@ nav {
   text-align: center;
 }
 
+.cta-background {
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  padding: 60px 30px;
+}
+
+.cta-overlay {
+  background-color: rgba(74, 111, 220, 0.85);
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .cta h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
