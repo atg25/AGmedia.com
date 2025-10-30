@@ -1,4 +1,4 @@
-/* 
+/*
  * AGmedia - Main CSS File
  * This file consolidates styles from:
  * - styles.css (global styles)
@@ -16,7 +16,7 @@
   --dark-bg: #2c3e50;
   --text-color: #333;
   --text-light: #6c757d;
-  --white: #ffffff;
+  --white: #fff;
   --border-radius: 8px;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
@@ -30,7 +30,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: var(--text-color);
 }
@@ -370,7 +370,7 @@ nav {
   padding: 0 20px;
 }
 
-.testimonial .quote::before {
+.testimonial .quote:before {
   content: '"';
   font-size: 4rem;
   color: rgba(74, 111, 220, 0.1);
@@ -507,6 +507,7 @@ nav {
 }
 
 .cta-background {
+  background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
   border-radius: 8px;
@@ -687,7 +688,7 @@ nav {
 }
 
 .service-features li:before {
-  content: "✓";
+  content: '✓';
   color: var(--primary-color);
   font-weight: bold;
   display: inline-block;
@@ -821,7 +822,7 @@ nav {
 }
 
 .solution li:before {
-  content: "✓";
+  content: '✓';
   color: var(--primary-color);
   font-weight: bold;
   display: inline-block;
@@ -864,7 +865,7 @@ nav {
   padding: 12px 15px;
   border: none;
   border-radius: var(--border-radius);
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
 }
 
@@ -876,7 +877,7 @@ nav {
   width: 100%;
   cursor: pointer;
   border: none;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   margin-top: 10px;
 }
@@ -941,7 +942,7 @@ footer {
 }
 
 .link-group h3:after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: -8px;
@@ -1118,8 +1119,8 @@ footer {
   border: 2px solid var(--primary-color);
 }
 
-.pricing-card.featured::before {
-  content: "Most Popular";
+.pricing-card.featured:before {
+  content: 'Most Popular';
   position: absolute;
   top: 0;
   right: 0;
