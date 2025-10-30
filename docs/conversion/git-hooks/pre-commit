@@ -27,8 +27,8 @@ if git diff --cached | grep -E '^\+.*(TODO|FIXME)' | grep -v -E '(TODO:|FIXME:)'
   echo "⚠️  Warning: TODO/FIXME should be formatted as 'TODO: description' or 'FIXME: description'"
 fi
 
-# Check for merge conflict markers
-if git diff --cached | grep -E '^\+.*(<<<<<<<|=======|>>>>>>>)'; then
+# Check for merge conflict markers (exclude hook files themselves)
+if git diff --cached --name-only | grep -v 'git-hooks/' | xargs git diff --cached -- 2>/dev/null | grep -E '^\+.*(<<<<<<<|=======|>>>>>>>)'; then
   echo "❌ Error: Merge conflict markers found in staged files"
   echo "   Resolve conflicts before committing"
   exit 1
