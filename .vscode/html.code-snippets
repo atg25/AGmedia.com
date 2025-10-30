@@ -1,0 +1,65 @@
+{
+  "HTML5 Boilerplate": {
+    "prefix": "html5",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "  <title>${1:Document}</title>",
+      "  <link rel=\"stylesheet\" href=\"${2:main.css}\">",
+      "</head>",
+      "<body>",
+      "  $0",
+      "  <script src=\"${3:main.js}\"></script>",
+      "</body>",
+      "</html>"
+    ],
+    "description": "HTML5 boilerplate with CSS and JS"
+  },
+  "Section with Container": {
+    "prefix": "section-container",
+    "body": [
+      "<section class=\"${1:section-name}\" id=\"${2:section-id}\">",
+      "  <div class=\"container\">",
+      "    <div class=\"section-header\">",
+      "      <h2>${3:Section Title}</h2>",
+      "      <p>${4:Section description}</p>",
+      "    </div>",
+      "    $0",
+      "  </div>",
+      "</section>"
+    ],
+    "description": "Section with container and header"
+  },
+  "Card Component": {
+    "prefix": "card",
+    "body": [
+      "<div class=\"card\">",
+      "  <div class=\"card-header\">",
+      "    <h3>${1:Card Title}</h3>",
+      "  </div>",
+      "  <div class=\"card-body\">",
+      "    $0",
+      "  </div>",
+      "</div>"
+    ],
+    "description": "Basic card component"
+  },
+  "Navigation": {
+    "prefix": "nav",
+    "body": [
+      "<nav>",
+      "  <div class=\"logo\">",
+      "    <h1>${1:Logo}</h1>",
+      "  </div>",
+      "  <ul class=\"nav-links\">",
+      "    <li><a href=\"#${2:home}\">${3:Home}</a></li>",
+      "    $0",
+      "  </ul>",
+      "</nav>"
+    ],
+    "description": "Navigation structure"
+  }
+}

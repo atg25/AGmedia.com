@@ -1,0 +1,77 @@
+{
+  "Event Listener": {
+    "prefix": "addevent",
+    "body": [
+      "${1:element}.addEventListener('${2:click}', function(e) {",
+      "  e.preventDefault();",
+      "  $0",
+      "});"
+    ],
+    "description": "Add event listener"
+  },
+  "Query Selector": {
+    "prefix": "qs",
+    "body": [
+      "const ${1:element} = document.querySelector('${2:selector}');"
+    ],
+    "description": "Query selector"
+  },
+  "Query Selector All": {
+    "prefix": "qsa",
+    "body": [
+      "const ${1:elements} = document.querySelectorAll('${2:selector}');"
+    ],
+    "description": "Query selector all"
+  },
+  "ForEach": {
+    "prefix": "foreach",
+    "body": [
+      "${1:array}.forEach(${2:item} => {",
+      "  $0",
+      "});"
+    ],
+    "description": "ForEach loop"
+  },
+  "Intersection Observer": {
+    "prefix": "intersectionobserver",
+    "body": [
+      "const observer = new IntersectionObserver((entries) => {",
+      "  entries.forEach(entry => {",
+      "    if (entry.isIntersecting) {",
+      "      $0",
+      "    }",
+      "  });",
+      "}, {",
+      "  threshold: ${1:0.1}",
+      "});",
+      "",
+      "${2:elements}.forEach(element => observer.observe(element));"
+    ],
+    "description": "Intersection Observer API"
+  },
+  "Fetch API": {
+    "prefix": "fetch",
+    "body": [
+      "fetch('${1:url}')",
+      "  .then(response => response.json())",
+      "  .then(data => {",
+      "    $0",
+      "  })",
+      "  .catch(error => console.error('Error:', error));"
+    ],
+    "description": "Fetch API call"
+  },
+  "Async Function": {
+    "prefix": "asyncfn",
+    "body": [
+      "async function ${1:functionName}() {",
+      "  try {",
+      "    $0",
+      "  } catch (error) {",
+      "    console.error('Error:', error);",
+      "  }",
+      "}"
+    ],
+    "description": "Async function with try/catch"
+  }
+}

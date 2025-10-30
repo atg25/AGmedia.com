@@ -1,0 +1,52 @@
+{
+  "CSS Section Comment": {
+    "prefix": "csscomment",
+    "body": [
+      "/* ========================================",
+      "   ${1:Section Name}",
+      "   ======================================== */"
+    ],
+    "description": "CSS section comment"
+  },
+  "Media Query": {
+    "prefix": "mq",
+    "body": [
+      "@media (max-width: ${1:768}px) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Media query"
+  },
+  "Flexbox Center": {
+    "prefix": "flexcenter",
+    "body": [
+      "display: flex;",
+      "justify-content: center;",
+      "align-items: center;"
+    ],
+    "description": "Flexbox centering"
+  },
+  "Grid Template": {
+    "prefix": "gridtemplate",
+    "body": [
+      "display: grid;",
+      "grid-template-columns: ${1:repeat(3, 1fr)};",
+      "gap: ${2:20px};"
+    ],
+    "description": "CSS Grid template"
+  },
+  "CSS Variable": {
+    "prefix": "cssvar",
+    "body": [
+      "--${1:variable-name}: ${2:value};"
+    ],
+    "description": "CSS custom property"
+  },
+  "Transition": {
+    "prefix": "transition",
+    "body": [
+      "transition: ${1:all} ${2:0.3s} ${3:ease};"
+    ],
+    "description": "CSS transition"
+  }
+}
