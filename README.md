@@ -10,6 +10,15 @@ Visit the live site: [AGmedia.com](https://agard.github.io/AGmedia.com/)
 
 AGmedia specializes in creating simple, effective websites for small businesses. Our approach focuses on understanding your business needs and delivering personalized solutions with ongoing support.
 
+## 🎯 Current Project: Single-Page Conversion
+
+This repository is undergoing a professional conversion from a multi-page to a single-page application. See our comprehensive documentation:
+
+- **[Setup Complete Guide](docs/setup-complete.md)** - Development environment overview and quick start
+- **[Implementation Plan](docs/conversion/implementation-plan.md)** - Complete 7-phase conversion strategy
+- **[VS Code Setup](docs/vscode-setup.md)** - Extension configuration and productivity tools
+- **[Atomic Commits Guide](docs/conversion/atomic-commits-guide.md)** - Professional git workflow
+
 ## ✨ Features
 
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop devices
@@ -28,6 +37,15 @@ AGmedia specializes in creating simple, effective websites for small businesses.
 - CSS3 (Custom styling with CSS variables)
 - Vanilla JavaScript
 - Google Fonts (Poppins)
+
+### Development Environment
+
+- **VS Code** with 17 curated extensions
+- **ESLint** for JavaScript quality
+- **Stylelint** for CSS standards
+- **Prettier** for automatic formatting
+- **Live Server** for hot reload development
+- **Git Hooks** for automated quality checks
 
 ## 🚀 Getting Started
 
@@ -59,23 +77,30 @@ AGmedia specializes in creating simple, effective websites for small businesses.
 
 ## 📁 Project Structure
 
-```
+```plaintext
 AGmedia.com/
-├── docs/                    # Project documentation
+├── docs/                           # Documentation
+│   ├── conversion/                 # Conversion planning
+│   │   ├── implementation-plan.md
+│   │   ├── quality-gates-checklist.md
+│   │   ├── atomic-commits-guide.md
+│   │   └── git-hooks/              # Automated checks
+│   ├── setup-complete.md
+│   ├── vscode-setup.md
 │   ├── brand_brief.md
-│   ├── customer_journey_map.md
-│   ├── summary.md
-│   └── ...
-├── src/                     # Source files
+│   └── customer_journey_map.md
+├── .vscode/                        # VS Code workspace
+│   ├── extensions.json
+│   ├── settings.json
+│   └── *.code-snippets
+├── src/                            # Source code
 │   ├── index.html
-│   ├── services.html
-│   ├── approach.html
-│   ├── client-stories.html
-│   ├── pricing.html
-│   ├── main.css            # Consolidated styles
-│   ├── main.js             # JavaScript functionality
-│   └── images/             # Image assets
-├── .gitignore
+│   ├── styles.css
+│   ├── app.js
+│   └── images/
+├── .eslintrc.json                  # JavaScript linting
+├── .stylelintrc.json               # CSS linting
+├── .prettierrc.json                # Code formatting
 └── README.md
 ```
 
