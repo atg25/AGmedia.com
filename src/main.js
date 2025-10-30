@@ -8,7 +8,7 @@
  * - Mobile navigation
  */
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   // Initialize all main functions
   initSmoothScrolling();
   initHeaderScrollEffect();
@@ -21,12 +21,12 @@ document.addEventListener('DOMContentLoaded', function () {
  * Initialize smooth scrolling for all anchor links
  */
 function initSmoothScrolling() {
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
 
       const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
+      if (targetId === '#') {return;}
 
       // If mobile menu is open, close it
       if (document.querySelector('.mobile-nav').classList.contains('active')) {
@@ -37,7 +37,7 @@ function initSmoothScrolling() {
       if (targetElement) {
         // Update active nav state
         updateActiveNavLink(targetId);
-        
+
         targetElement.scrollIntoView({
           behavior: 'smooth',
         });
@@ -54,12 +54,12 @@ function initSmoothScrolling() {
  */
 function updateActiveNavLink(targetId) {
   // Remove active class from all nav links
-  document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach((link) => {
+  document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(link => {
     link.classList.remove('active');
   });
 
   // Add active class to matching links
-  document.querySelectorAll(`a[href="${targetId}"]`).forEach((link) => {
+  document.querySelectorAll(`a[href="${targetId}"]`).forEach(link => {
     // Only add active to nav links, not buttons
     if (!link.classList.contains('btn-primary')) {
       link.classList.add('active');
@@ -74,7 +74,7 @@ function updateActiveNavOnScroll() {
   const sections = document.querySelectorAll('section[id]');
   const scrollPosition = window.scrollY + 100; // Offset for header
 
-  sections.forEach((section) => {
+  sections.forEach(section => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.offsetHeight;
     const sectionId = '#' + section.getAttribute('id');
@@ -91,7 +91,7 @@ function updateActiveNavOnScroll() {
 function initHeaderScrollEffect() {
   const header = document.querySelector('header');
 
-  window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       header.style.padding = '10px 0';
     } else {
@@ -106,8 +106,8 @@ function initHeaderScrollEffect() {
 function initContactForms() {
   const contactForms = document.querySelectorAll('.contact-form');
 
-  contactForms.forEach((form) => {
-    form.addEventListener('submit', function (e) {
+  contactForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
 
       // Get form values
@@ -127,9 +127,7 @@ function initContactForms() {
       confirmationDiv.innerHTML = `
                 <h3>Thank you, ${name}!</h3>
                 <p>Your consultation request has been received. I'll contact you at ${email} within 1 business day to schedule your free consultation.</p>
-                <p>Looking forward to discussing your ${
-  service || 'website'
-} needs!</p>
+                <p>Looking forward to discussing your ${service || 'website'} needs!</p>
             `;
 
       // Insert the confirmation message where the form was
@@ -147,7 +145,7 @@ function initTestimonialSlider() {
 
   if (navDots.length > 0) {
     // Add click event to nav dots
-    navDots.forEach((dot) => {
+    navDots.forEach(dot => {
       dot.addEventListener('click', function () {
         showTestimonial(this.getAttribute('data-testimonial'));
       });
@@ -165,9 +163,7 @@ function initTestimonialSlider() {
     };
 
     // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // Only auto-rotate if user doesn't prefer reduced motion
     if (!prefersReducedMotion) {
@@ -176,11 +172,11 @@ function initTestimonialSlider() {
       // Pause auto-rotation on hover
       const testimonialSlider = document.querySelector('.testimonial-slider');
       if (testimonialSlider) {
-        testimonialSlider.addEventListener('mouseenter', function () {
+        testimonialSlider.addEventListener('mouseenter', () => {
           clearInterval(autoRotateInterval);
         });
 
-        testimonialSlider.addEventListener('mouseleave', function () {
+        testimonialSlider.addEventListener('mouseleave', () => {
           autoRotateInterval = setInterval(rotateTestimonials, 5000);
         });
       }
@@ -193,12 +189,12 @@ function initTestimonialSlider() {
    */
   function showTestimonial(targetId) {
     // Hide all testimonials
-    testimonials.forEach((testimonial) => {
+    testimonials.forEach(testimonial => {
       testimonial.style.display = 'none';
     });
 
     // Remove active class from all dots
-    navDots.forEach((dot) => {
+    navDots.forEach(dot => {
       dot.classList.remove('active');
     });
 
@@ -206,9 +202,7 @@ function initTestimonialSlider() {
     document.getElementById(targetId).style.display = 'block';
 
     // Add active class to the corresponding dot
-    document
-      .querySelector(`[data-testimonial="${targetId}"]`)
-      .classList.add('active');
+    document.querySelector(`[data-testimonial="${targetId}"]`).classList.add('active');
   }
 }
 
@@ -235,4 +229,3 @@ function toggleMobileNav() {
   mobileNav.classList.toggle('active');
   document.body.classList.toggle('no-scroll');
 }
-
