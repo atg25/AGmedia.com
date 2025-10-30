@@ -1,8 +1,9 @@
 # Single-Page Website Conversion Plan
+
 ## AGmedia.com - Multi-Page to Single-Page Transformation
 
-**Project Start Date:** October 30, 2025  
-**Estimated Completion:** 9-14 hours across 6 phases  
+**Project Start Date:** October 30, 2025
+**Estimated Completion:** 9-14 hours across 6 phases
 **Quality Gates:** Required before each git commit
 
 ---
@@ -11,7 +12,7 @@
 
 Convert the current 5-page AGmedia website into a cohesive single-page experience with smooth scrolling navigation while maintaining all essential content and functionality.
 
-**Current Structure:** 5 separate HTML pages (index, services, approach, client-stories, pricing)  
+**Current Structure:** 5 separate HTML pages (index, services, approach, client-stories, pricing)
 **Target Structure:** 1 comprehensive single-page site with anchor navigation
 
 ---
@@ -19,10 +20,12 @@ Convert the current 5-page AGmedia website into a cohesive single-page experienc
 ## 📋 Implementation Phases
 
 ### **PHASE 1: Pre-Conversion Backup & Analysis**
-**Estimated Time:** 30 minutes  
+
+**Estimated Time:** 30 minutes
 **Status:** ⏳ NOT STARTED
 
 #### Tasks:
+
 - [ ] Create feature branch: `git checkout -b feature/single-page-conversion`
 - [ ] Document current page structure and content inventory
 - [ ] Take screenshots of all pages for reference
@@ -30,10 +33,12 @@ Convert the current 5-page AGmedia website into a cohesive single-page experienc
 - [ ] Create rollback plan
 
 #### Deliverables:
+
 - `docs/conversion/content-inventory.md` - Complete content map
 - `docs/conversion/screenshots/` - Visual reference of current site
 
 #### Quality Gate #1: Pre-Conversion Checklist
+
 ```
 ✓ Branch created and checked out
 ✓ All current files committed to main branch
@@ -48,10 +53,12 @@ Convert the current 5-page AGmedia website into a cohesive single-page experienc
 ---
 
 ### **PHASE 2: Content Consolidation & Planning**
-**Estimated Time:** 2-3 hours  
+
+**Estimated Time:** 2-3 hours
 **Status:** ⏳ NOT STARTED
 
 #### Tasks:
+
 - [ ] Extract content from all 5 pages
 - [ ] Prioritize and categorize content by importance
 - [ ] Write condensed versions of verbose sections
@@ -60,6 +67,7 @@ Convert the current 5-page AGmedia website into a cohesive single-page experienc
 - [ ] Plan accordion/modal interactions for detailed content
 
 #### Section Structure:
+
 ```
 1. #hero - Hero Section (existing)
 2. #services - Services Overview (expanded cards)
@@ -71,18 +79,21 @@ Convert the current 5-page AGmedia website into a cohesive single-page experienc
 ```
 
 #### Content Reduction Targets:
-| Section | Current Words | Target Words | Method |
-|---------|---------------|--------------|--------|
-| Services | ~800 | ~400 | Bullet points, expandable details |
-| Process | ~600 | ~300 | Visual timeline, concise steps |
-| Case Studies | ~1200 | ~400 | Metrics-focused testimonials |
-| FAQs | ~500 | ~300 | Top 6 questions only |
+
+| Section      | Current Words | Target Words | Method                            |
+| ------------ | ------------- | ------------ | --------------------------------- |
+| Services     | ~800          | ~400         | Bullet points, expandable details |
+| Process      | ~600          | ~300         | Visual timeline, concise steps    |
+| Case Studies | ~1200         | ~400         | Metrics-focused testimonials      |
+| FAQs         | ~500          | ~300         | Top 6 questions only              |
 
 #### Deliverables:
+
 - `docs/conversion/content-map.md` - Section-by-section content plan
 - `docs/conversion/content-consolidated.txt` - All condensed content ready for HTML
 
 #### Quality Gate #2: Content Consolidation Checklist
+
 ```
 ✓ All 5 pages analyzed and content extracted
 ✓ Content condensed to meet word count targets
@@ -98,10 +109,12 @@ Convert the current 5-page AGmedia website into a cohesive single-page experienc
 ---
 
 ### **PHASE 3: HTML Structure Creation**
-**Estimated Time:** 2-3 hours  
+
+**Estimated Time:** 2-3 hours
 **Status:** ⏳ NOT STARTED
 
 #### Tasks:
+
 - [ ] Create `src/index-single.html` (new file, keep old as backup)
 - [ ] Build semantic HTML structure with proper section IDs
 - [ ] Update navigation to use anchor links
@@ -114,50 +127,52 @@ Convert the current 5-page AGmedia website into a cohesive single-page experienc
 - [ ] Add ARIA labels for accessibility
 
 #### HTML Structure Template:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- Meta, title, fonts -->
-  <link rel="stylesheet" href="main-single.css">
-</head>
-<body>
-  <!-- Fixed Header with anchor nav -->
-  <header id="header">
-    <nav>
-      <a href="#hero">Home</a>
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#work">Success Stories</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <head>
+    <!-- Meta, title, fonts -->
+    <link rel="stylesheet" href="main-single.css" />
+  </head>
+  <body>
+    <!-- Fixed Header with anchor nav -->
+    <header id="header">
+      <nav>
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#work">Success Stories</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <!-- Main Content -->
-  <main>
-    <section id="hero">...</section>
-    <section id="services">...</section>
-    <section id="process">...</section>
-    <section id="work">...</section>
-    <section id="pricing">...</section>
-    <section id="faq">...</section>
-    <section id="contact">...</section>
-  </main>
+    <!-- Main Content -->
+    <main>
+      <section id="hero">...</section>
+      <section id="services">...</section>
+      <section id="process">...</section>
+      <section id="work">...</section>
+      <section id="pricing">...</section>
+      <section id="faq">...</section>
+      <section id="contact">...</section>
+    </main>
 
-  <!-- Footer -->
-  <footer>...</footer>
+    <!-- Footer -->
+    <footer>...</footer>
 
-  <!-- Scroll to Top Button -->
-  <button id="scrollToTop" class="scroll-top-btn">↑</button>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-top-btn">↑</button>
 
-  <script src="main-single.js"></script>
-</body>
+    <script src="main-single.js"></script>
+  </body>
 </html>
 ```
 
 #### Key Requirements:
+
 - All sections must have unique IDs for anchor linking
 - Semantic HTML5 tags (section, article, aside, nav)
 - Proper heading hierarchy (h1 → h2 → h3)
@@ -165,9 +180,11 @@ Convert the current 5-page AGmedia website into a cohesive single-page experienc
 - Form labels properly associated with inputs
 
 #### Deliverables:
+
 - `src/index-single.html` - Complete single-page HTML structure
 
 #### Quality Gate #3: HTML Structure Checklist
+
 ```
 ✓ Valid HTML5 (run through W3C validator)
 ✓ All section IDs are unique and descriptive
@@ -183,6 +200,7 @@ Convert the current 5-page AGmedia website into a cohesive single-page experienc
 ```
 
 **Validation Commands:**
+
 ```bash
 # Check HTML validity
 npx html-validate src/index-single.html
@@ -196,10 +214,12 @@ npx broken-link-checker http://localhost:8000/src/index-single.html
 ---
 
 ### **PHASE 4: CSS Optimization & Styling**
-**Estimated Time:** 1-2 hours  
+
+**Estimated Time:** 1-2 hours
 **Status:** ⏳ NOT STARTED
 
 #### Tasks:
+
 - [ ] Create `src/main-single.css` based on existing `main.css`
 - [ ] Remove unused multi-page styles
 - [ ] Add smooth scroll behavior
@@ -216,6 +236,7 @@ npx broken-link-checker http://localhost:8000/src/index-single.html
 #### New CSS Requirements:
 
 **1. Smooth Scrolling:**
+
 ```css
 html {
   scroll-behavior: smooth;
@@ -224,6 +245,7 @@ html {
 ```
 
 **2. Section Styling:**
+
 ```css
 section {
   min-height: 50vh;
@@ -242,6 +264,7 @@ section:nth-child(even) {
 ```
 
 **3. Active Navigation (Scroll Spy):**
+
 ```css
 .nav-links a.active {
   color: var(--primary-color);
@@ -250,6 +273,7 @@ section:nth-child(even) {
 ```
 
 **4. Scroll-to-Top Button:**
+
 ```css
 .scroll-top-btn {
   position: fixed;
@@ -267,6 +291,7 @@ section:nth-child(even) {
 ```
 
 **5. FAQ Accordion:**
+
 ```css
 .faq-item {
   cursor: pointer;
@@ -285,15 +310,18 @@ section:nth-child(even) {
 ```
 
 #### Styles to Remove:
+
 - Page-specific header styles
 - Page transition CSS
 - Duplicate navigation styles
 - Unused component styles from multi-page setup
 
 #### Deliverables:
+
 - `src/main-single.css` - Optimized single-page stylesheet
 
 #### Quality Gate #4: CSS Quality Checklist
+
 ```
 ✓ CSS validates (W3C CSS Validator)
 ✓ All sections properly styled and spaced
@@ -311,6 +339,7 @@ section:nth-child(even) {
 ```
 
 **Testing Commands:**
+
 ```bash
 # Validate CSS
 npx stylelint src/main-single.css
@@ -324,6 +353,7 @@ npx purgecss --css src/main-single.css --content src/index-single.html
 ```
 
 **Performance Targets:**
+
 - CSS file size: < 50KB
 - No unused CSS rules > 20%
 - Mobile-first responsive breakpoints
@@ -333,10 +363,12 @@ npx purgecss --css src/main-single.css --content src/index-single.html
 ---
 
 ### **PHASE 5: JavaScript Enhancement**
-**Estimated Time:** 2-3 hours  
+
+**Estimated Time:** 2-3 hours
 **Status:** ⏳ NOT STARTED
 
 #### Tasks:
+
 - [ ] Create `src/main-single.js` based on existing `main.js`
 - [ ] Implement scroll-spy for active navigation
 - [ ] Add smooth scroll polyfill for older browsers
@@ -353,6 +385,7 @@ npx purgecss --css src/main-single.css --content src/index-single.html
 #### Core JavaScript Features:
 
 **1. Scroll Spy (Active Navigation):**
+
 ```javascript
 // Highlight active section in navigation
 function updateActiveNav() {
@@ -377,21 +410,22 @@ window.addEventListener('scroll', updateActiveNav);
 ```
 
 **2. Smooth Scroll (with fallback):**
+
 ```javascript
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
-    
+
     if (target) {
       // Close mobile menu if open
       closeMobileNav();
-      
+
       // Smooth scroll to target
       target.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
       });
     }
   });
@@ -399,6 +433,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 ```
 
 **3. Scroll-to-Top Button:**
+
 ```javascript
 // Show/hide scroll to top button
 const scrollTopBtn = document.getElementById('scrollToTop');
@@ -414,17 +449,18 @@ window.addEventListener('scroll', () => {
 scrollTopBtn.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: 'smooth',
   });
 });
 ```
 
 **4. FAQ Accordion:**
+
 ```javascript
 // FAQ accordion functionality
 document.querySelectorAll('.faq-item').forEach(item => {
   const question = item.querySelector('.faq-question');
-  
+
   question.addEventListener('click', () => {
     // Close other open FAQs (optional)
     document.querySelectorAll('.faq-item.active').forEach(openItem => {
@@ -432,7 +468,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
         openItem.classList.remove('active');
       }
     });
-    
+
     // Toggle current FAQ
     item.classList.toggle('active');
   });
@@ -440,6 +476,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
 ```
 
 **5. Lazy Loading Images:**
+
 ```javascript
 // Lazy load images as they come into view
 const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -459,17 +496,21 @@ document.querySelectorAll('img[data-src]').forEach(img => {
 ```
 
 **6. Section Reveal Animations:**
+
 ```javascript
 // Animate sections as they come into view
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('section-visible');
-    }
-  });
-}, {
-  threshold: 0.1
-});
+const sectionObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section-visible');
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+  }
+);
 
 document.querySelectorAll('section').forEach(section => {
   sectionObserver.observe(section);
@@ -477,14 +518,17 @@ document.querySelectorAll('section').forEach(section => {
 ```
 
 #### JavaScript to Remove/Update:
+
 - Page navigation handling
 - Multi-page form redirect logic
 - Duplicate initialization functions
 
 #### Deliverables:
+
 - `src/main-single.js` - Complete single-page JavaScript functionality
 
 #### Quality Gate #5: JavaScript Quality Checklist
+
 ```
 ✓ No console errors in browser DevTools
 ✓ Scroll-spy updates active nav correctly on scroll
@@ -505,6 +549,7 @@ document.querySelectorAll('section').forEach(section => {
 ```
 
 **Testing Commands:**
+
 ```bash
 # Lint JavaScript
 npx eslint src/main-single.js
@@ -518,6 +563,7 @@ grep -n "console.log" src/main-single.js
 ```
 
 **Browser Testing:**
+
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
@@ -525,6 +571,7 @@ grep -n "console.log" src/main-single.js
 - Chrome Mobile (Android)
 
 **Performance Targets:**
+
 - No JavaScript errors in console
 - Scroll-spy updates < 16ms (60fps)
 - Smooth scroll transitions
@@ -535,10 +582,12 @@ grep -n "console.log" src/main-single.js
 ---
 
 ### **PHASE 6: Testing, Optimization & Deployment**
-**Estimated Time:** 2-3 hours  
+
+**Estimated Time:** 2-3 hours
 **Status:** ⏳ NOT STARTED
 
 #### Tasks:
+
 - [ ] Cross-browser testing (Chrome, Firefox, Safari, Edge)
 - [ ] Mobile device testing (iOS Safari, Chrome Android)
 - [ ] Accessibility audit (WCAG 2.1 AA compliance)
@@ -555,6 +604,7 @@ grep -n "console.log" src/main-single.js
 #### Testing Checklist:
 
 **Functionality Testing:**
+
 - [ ] All navigation links work
 - [ ] Smooth scrolling to each section
 - [ ] Active nav updates on scroll
@@ -568,6 +618,7 @@ grep -n "console.log" src/main-single.js
 - [ ] Lazy loading triggers properly
 
 **Responsive Testing (Breakpoints):**
+
 - [ ] 320px (iPhone SE)
 - [ ] 375px (iPhone 12 Pro)
 - [ ] 768px (iPad portrait)
@@ -576,6 +627,7 @@ grep -n "console.log" src/main-single.js
 - [ ] 1920px (Large desktop)
 
 **Browser Testing:**
+
 - [ ] Chrome (latest)
 - [ ] Firefox (latest)
 - [ ] Safari (latest)
@@ -584,6 +636,7 @@ grep -n "console.log" src/main-single.js
 - [ ] Chrome Mobile
 
 **Accessibility Testing:**
+
 ```bash
 # Run axe-core accessibility tests
 npx @axe-core/cli src/index-single.html
@@ -593,6 +646,7 @@ npx @axe-core/cli src/index-single.html
 ```
 
 **Accessibility Checklist:**
+
 - [ ] All images have descriptive alt text
 - [ ] Form inputs have associated labels
 - [ ] Keyboard navigation works (Tab, Enter, Esc)
@@ -603,6 +657,7 @@ npx @axe-core/cli src/index-single.html
 - [ ] Skip to main content link (optional)
 
 **Performance Testing:**
+
 ```bash
 # Run Lighthouse in Chrome DevTools
 # Or use CLI:
@@ -616,6 +671,7 @@ npx lighthouse http://localhost:8000/src/index-single.html --view
 ```
 
 **Performance Optimization:**
+
 - [ ] Images optimized (WebP format where possible)
 - [ ] CSS minified for production
 - [ ] JavaScript minified for production
@@ -625,42 +681,54 @@ npx lighthouse http://localhost:8000/src/index-single.html --view
 - [ ] Font loading optimized
 
 **SEO Optimization:**
+
 ```html
 <!-- Update meta tags -->
-<meta name="description" content="AGmedia provides friendly, local web support for small businesses. Affordable website development, ongoing support, and training.">
-<meta name="keywords" content="web development, small business websites, affordable web design, website support">
-<meta property="og:title" content="AGmedia - Web Solutions for Small Businesses">
-<meta property="og:description" content="Simple, effective websites for small businesses with ongoing support">
-<meta property="og:image" content="https://atg25.github.io/AGmedia.com/src/images/og-image.jpg">
-<meta property="og:url" content="https://atg25.github.io/AGmedia.com/">
-<meta name="twitter:card" content="summary_large_image">
+<meta
+  name="description"
+  content="AGmedia provides friendly, local web support for small businesses. Affordable website development, ongoing support, and training."
+/>
+<meta
+  name="keywords"
+  content="web development, small business websites, affordable web design, website support"
+/>
+<meta property="og:title" content="AGmedia - Web Solutions for Small Businesses" />
+<meta
+  property="og:description"
+  content="Simple, effective websites for small businesses with ongoing support"
+/>
+<meta property="og:image" content="https://atg25.github.io/AGmedia.com/src/images/og-image.jpg" />
+<meta property="og:url" content="https://atg25.github.io/AGmedia.com/" />
+<meta name="twitter:card" content="summary_large_image" />
 
 <!-- Add structured data -->
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "AGmedia",
-  "description": "Web development services for small businesses",
-  "url": "https://atg25.github.io/AGmedia.com/",
-  "telephone": "(555) 123-4567",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "123 Main Street",
-    "addressLocality": "Anytown",
-    "addressRegion": "USA",
-    "postalCode": "12345"
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "AGmedia",
+    "description": "Web development services for small businesses",
+    "url": "https://atg25.github.io/AGmedia.com/",
+    "telephone": "(555) 123-4567",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main Street",
+      "addressLocality": "Anytown",
+      "addressRegion": "USA",
+      "postalCode": "12345"
+    }
   }
-}
 </script>
 ```
 
 #### Deliverables:
+
 - `docs/conversion/testing-report.md` - Complete testing results
 - `docs/conversion/performance-report.md` - Lighthouse scores and optimization notes
 - Optimized production-ready files
 
 #### Quality Gate #6: Pre-Deployment Checklist
+
 ```
 FUNCTIONALITY:
 ✓ All links work (no 404s)
@@ -719,6 +787,7 @@ CODE QUALITY:
 ```
 
 **Final Validation Commands:**
+
 ```bash
 # Validate HTML
 npx html-validate src/index-single.html
@@ -744,10 +813,12 @@ npx @axe-core/cli src/index-single.html
 ---
 
 ### **PHASE 7: Deployment & Migration**
-**Estimated Time:** 1 hour  
+
+**Estimated Time:** 1 hour
 **Status:** ⏳ NOT STARTED
 
 #### Tasks:
+
 - [ ] Rename `index.html` to `index-multi.html` (backup)
 - [ ] Rename `index-single.html` to `index.html`
 - [ ] Update root redirect if needed
@@ -760,6 +831,7 @@ npx @axe-core/cli src/index-single.html
 - [ ] Tag release: `v2.0.0-single-page`
 
 #### Deployment Steps:
+
 ```bash
 # 1. Final backup
 git add .
@@ -794,6 +866,7 @@ git push origin v2.0.0
 ```
 
 #### Post-Deployment Verification:
+
 - [ ] Visit live site: https://atg25.github.io/AGmedia.com/
 - [ ] Test all functionality on live site
 - [ ] Check GitHub Pages deployment logs
@@ -802,6 +875,7 @@ git push origin v2.0.0
 - [ ] Check mobile version on real devices
 
 #### Quality Gate #7: Deployment Verification
+
 ```
 ✓ Site accessible at live URL
 ✓ No 404 errors on live site
@@ -849,23 +923,24 @@ git push origin main
 
 ### Before vs. After Comparison:
 
-| Metric | Before (Multi-Page) | Target (Single-Page) |
-|--------|---------------------|----------------------|
-| Page Files | 5 HTML files | 1 HTML file |
-| CSS Files | 1 file | 1 file (optimized) |
-| JS Files | 1 file | 1 file (enhanced) |
-| HTTP Requests | ~15-20 per page visit | ~10-12 total |
-| Avg Page Load | ~2-3s per page | ~1.5-2s total |
-| Lighthouse Performance | 85-90 | >90 |
-| Lighthouse Accessibility | 90-95 | >95 |
-| Total Lines of Code | ~3500 | ~2500 |
-| Maintenance Complexity | High (5 files) | Low (1 file) |
+| Metric                   | Before (Multi-Page)   | Target (Single-Page) |
+| ------------------------ | --------------------- | -------------------- |
+| Page Files               | 5 HTML files          | 1 HTML file          |
+| CSS Files                | 1 file                | 1 file (optimized)   |
+| JS Files                 | 1 file                | 1 file (enhanced)    |
+| HTTP Requests            | ~15-20 per page visit | ~10-12 total         |
+| Avg Page Load            | ~2-3s per page        | ~1.5-2s total        |
+| Lighthouse Performance   | 85-90                 | >90                  |
+| Lighthouse Accessibility | 90-95                 | >95                  |
+| Total Lines of Code      | ~3500                 | ~2500                |
+| Maintenance Complexity   | High (5 files)        | Low (1 file)         |
 
 ---
 
 ## 📝 Documentation Updates Required
 
 After completion, update:
+
 - [ ] `README.md` - New single-page structure
 - [ ] `DEPLOYMENT.md` - Updated deployment notes
 - [ ] `docs/summary.md` - Project summary with new structure
@@ -875,17 +950,18 @@ After completion, update:
 
 ## 🎯 Phase Completion Tracking
 
-| Phase | Status | Time Spent | Commit Hash | Notes |
-|-------|--------|------------|-------------|-------|
-| 1. Backup & Analysis | ⏳ Not Started | - | - | - |
-| 2. Content Consolidation | ⏳ Not Started | - | - | - |
-| 3. HTML Structure | ⏳ Not Started | - | - | - |
-| 4. CSS Optimization | ⏳ Not Started | - | - | - |
-| 5. JavaScript Enhancement | ⏳ Not Started | - | - | - |
-| 6. Testing & Optimization | ⏳ Not Started | - | - | - |
-| 7. Deployment | ⏳ Not Started | - | - | - |
+| Phase                     | Status         | Time Spent | Commit Hash | Notes |
+| ------------------------- | -------------- | ---------- | ----------- | ----- |
+| 1. Backup & Analysis      | ⏳ Not Started | -          | -           | -     |
+| 2. Content Consolidation  | ⏳ Not Started | -          | -           | -     |
+| 3. HTML Structure         | ⏳ Not Started | -          | -           | -     |
+| 4. CSS Optimization       | ⏳ Not Started | -          | -           | -     |
+| 5. JavaScript Enhancement | ⏳ Not Started | -          | -           | -     |
+| 6. Testing & Optimization | ⏳ Not Started | -          | -           | -     |
+| 7. Deployment             | ⏳ Not Started | -          | -           | -     |
 
 **Legend:**
+
 - ⏳ Not Started
 - 🔄 In Progress
 - ✅ Complete
@@ -897,20 +973,21 @@ After completion, update:
 
 ### Potential Risks & Solutions:
 
-| Risk | Impact | Probability | Mitigation |
-|------|--------|-------------|------------|
-| Content doesn't fit well on single page | High | Medium | Phase 2 planning and mockups |
-| Performance issues with long page | Medium | Low | Lazy loading, optimization |
-| SEO ranking drop | High | Low | Proper heading structure, meta tags |
-| User confusion with new layout | Medium | Medium | User testing before full deployment |
-| Mobile performance issues | Medium | Low | Mobile-first approach, testing |
-| Accessibility regressions | High | Low | Quality gate checks, automated testing |
+| Risk                                    | Impact | Probability | Mitigation                             |
+| --------------------------------------- | ------ | ----------- | -------------------------------------- |
+| Content doesn't fit well on single page | High   | Medium      | Phase 2 planning and mockups           |
+| Performance issues with long page       | Medium | Low         | Lazy loading, optimization             |
+| SEO ranking drop                        | High   | Low         | Proper heading structure, meta tags    |
+| User confusion with new layout          | Medium | Medium      | User testing before full deployment    |
+| Mobile performance issues               | Medium | Low         | Mobile-first approach, testing         |
+| Accessibility regressions               | High   | Low         | Quality gate checks, automated testing |
 
 ---
 
 ## 📞 Support & Questions
 
 Document any issues or questions during implementation:
+
 - Create issues in GitHub repo
 - Reference this plan document
 - Note blockers in phase tracking table
@@ -971,15 +1048,16 @@ DEPLOYMENT:
 
 ---
 
-**Project Lead:** Andrew Gard  
-**Repository:** https://github.com/atg25/AGmedia.com  
+**Project Lead:** Andrew Gard
+**Repository:** https://github.com/atg25/AGmedia.com
 **Live Site:** https://atg25.github.io/AGmedia.com/
 
 **Version Control:**
+
 - Feature Branch: `feature/single-page-conversion`
 - Target Merge: `main`
 - Release Tag: `v2.0.0-single-page`
 
 ---
 
-*This document is a living document and should be updated as phases are completed.*
+_This document is a living document and should be updated as phases are completed._

@@ -1,8 +1,8 @@
 # Phase 1: Pre-Conversion Site Inventory & Analysis
 
-**Date:** October 30, 2025  
-**Branch:** feature/single-page-conversion  
-**Backup:** backup/pre-conversion  
+**Date:** October 30, 2025
+**Branch:** feature/single-page-conversion
+**Backup:** backup/pre-conversion
 **Status:** ✅ Complete
 
 ---
@@ -20,7 +20,7 @@ AGmedia.com/
 └── pricing.html       (Pricing & Packages)
 ```
 
-**Total Pages:** 5  
+**Total Pages:** 5
 **Target:** Consolidate into 1 single-page application
 
 ---
@@ -30,12 +30,15 @@ AGmedia.com/
 ### 1. index.html (Home Page)
 
 **Sections:**
+
 1. **Header/Navigation** (repeated on all pages)
+
    - Logo: "AGmedia"
    - Nav links: Home | Services | My Approach | Client Stories | Pricing | Free Consultation
    - Mobile hamburger menu
 
 2. **Hero Section** (`section.hero`)
+
    - H1: "Friendly, Local Web Support for Your Small Business"
    - Tagline: Build and maintain simple websites
    - 2 CTA buttons: Free Consultation | View My Approach
@@ -43,6 +46,7 @@ AGmedia.com/
    - Hero image (Unsplash)
 
 3. **Services Section** (`section.services`)
+
    - Section header: "Focused Services"
    - 3 service cards:
      - Website Development
@@ -51,12 +55,14 @@ AGmedia.com/
    - Each has icon, description, "Learn More" link
 
 4. **About Section** (`section.about-me`)
+
    - H2: "A One-Person Business That Understands Your Challenges"
    - Personal photo (local image: D2D10473-4AB2-47DF-9531-09069BF42FAD_1_105_c.jpeg)
    - 2 paragraphs about bootstrapped approach
    - CTA: Learn More About My Approach
 
 5. **Testimonials Section** (`section.testimonials`)
+
    - Section header: "What Local Businesses Say"
    - 3 testimonial slides with auto-rotation:
      - Sarah Johnson (Bakery Owner)
@@ -66,6 +72,7 @@ AGmedia.com/
    - Photos from Unsplash
 
 6. **Contact/CTA Section** (`section.cta#contact`)
+
    - Background image with overlay
    - H2: "Looking for a website partner..."
    - Contact form with fields:
@@ -86,11 +93,13 @@ AGmedia.com/
    - Social links (Facebook, LinkedIn)
 
 **Page Meta:**
+
 - Title: "AGmedia - Web Solutions for Small Businesses"
 - Description: ✅ Added (150 chars)
 - Keywords: ✅ Added
 
 **Dependencies:**
+
 - CSS: `./main.css`
 - JS: `./main.js`
 - Font: Google Fonts (Poppins)
@@ -103,13 +112,16 @@ AGmedia.com/
 **Unique Content:**
 
 1. **Page Header** (`section.page-header`)
+
    - H1: "Services That Grow Your Business"
    - Tagline: "Simple, effective web solutions"
 
 2. **Services Detail Section** (`section.services-detail`)
+
    - 3 detailed service items (alternating layout):
-   
+
    **Service 1: Website Development**
+
    - Image (Unsplash)
    - H2 + tagline
    - Description paragraph
@@ -122,8 +134,9 @@ AGmedia.com/
      - Simple CMS
    - Testimonial quote (Sarah Johnson)
    - CTA: "Discuss Your Website Needs"
-   
+
    **Service 2: Ongoing Support**
+
    - Same structure, reversed layout
    - "What's Included" list (6 items):
      - Security updates & backups
@@ -134,8 +147,9 @@ AGmedia.com/
      - Peace of mind
    - Testimonial quote (Michael Chen)
    - CTA: "Learn About Support Options"
-   
+
    **Service 3: Website Education**
+
    - Same structure as Service 1
    - "What's Included" list (6 items):
      - One-on-one training
@@ -148,6 +162,7 @@ AGmedia.com/
    - CTA: "Explore Training Options"
 
 3. **Pricing Overview Section** (`section.pricing-overview`)
+
    - H2: "Transparent, Affordable Pricing"
    - Intro paragraph
    - CTA: "View Pricing Details" → links to pricing.html
@@ -156,10 +171,12 @@ AGmedia.com/
 5. **Footer** (identical to index.html)
 
 **Page Meta:**
+
 - Title: "Services - AGmedia"
 - No description/keywords
 
 **Issues Found:**
+
 - ❌ CSS reference: `href="main.css"` (should be `./main.css`)
 - ❌ JS reference: `src="main.js"` (should be `./main.js`)
 - ❌ Inline styles in CTA section (not using CSS classes)
@@ -173,10 +190,12 @@ AGmedia.com/
 **Unique Content:**
 
 1. **Page Header** (`section.page-header`)
+
    - H1: "My Approach to Web Solutions"
    - Tagline: "Personal, practical, and focused on your success"
 
 2. **Philosophy Section** (`section.philosophy`)
+
    - About content grid (image + text)
    - Personal photo (same as index.html)
    - H2: "A Small Business Owner Serving Small Business Owners"
@@ -188,6 +207,7 @@ AGmedia.com/
    - Closing paragraph
 
 3. **Timeline Section** (`section.timeline`)
+
    - H2: "The Client Journey"
    - 5 step cards:
      1. Discovery (Free 30-min consultation)
@@ -197,6 +217,7 @@ AGmedia.com/
      5. Ongoing Support (Maintenance & education)
 
 4. **FAQ Section** (`section.faq`)
+
    - H2: "Frequently Asked Questions"
    - 6 FAQ items:
      - How long to build? (2-4 weeks)
@@ -207,6 +228,7 @@ AGmedia.com/
      - Work remotely? (Yes, but focus on local)
 
 5. **Values Section** (`section.values`)
+
    - H2: "Working Style & Values"
    - 6 value cards in grid:
      - Clear Communication
@@ -220,10 +242,12 @@ AGmedia.com/
 7. **Footer** (identical)
 
 **Page Meta:**
+
 - Title: "My Approach - AGmedia"
 - No description/keywords
 
 **Issues Found:**
+
 - ❌ CSS/JS references not using `./`
 - ❌ Inline styles in CTA
 - ❌ No lazy loading
@@ -236,13 +260,16 @@ AGmedia.com/
 **Unique Content:**
 
 1. **Page Header** (`section.page-header`)
+
    - H1: "Client Success Stories"
    - Tagline: "Real results for small businesses like yours"
 
 2. **Case Studies Section** (`section.case-studies`)
+
    - 3 detailed case studies:
 
    **Case Study 1: Sarah's Bakery**
+
    - Header grid: Image + intro
    - Business type: Local Bakery
    - Client quote
@@ -253,16 +280,18 @@ AGmedia.com/
        - 30% increase in new customers
        - 50% increase in special orders
        - 5 hrs/week saved
-   
+
    **Case Study 2: Chen's Restaurant**
+
    - Same structure
    - Business type: Local Restaurant
    - Different challenge/solution/results:
      - 100% increase in online orders
      - 45% increase in mobile orders
      - 25% increase in revenue
-   
+
    **Case Study 3: Bloom Boutique**
+
    - Same structure
    - Business type: Local Clothing Store
    - Results:
@@ -271,6 +300,7 @@ AGmedia.com/
      - 35% increase in store visits
 
 3. **Testimonial Grid Section** (`section.testimonial-grid`)
+
    - H2: "What Clients Say"
    - 4 testimonial cards in grid:
      - David Wilson (Plumbing Business)
@@ -283,10 +313,12 @@ AGmedia.com/
 5. **Footer** (identical)
 
 **Page Meta:**
+
 - Title: "Client Stories - AGmedia"
 - No description/keywords
 
 **Issues Found:**
+
 - ❌ CSS/JS references
 - ❌ Inline styles in CTA
 - ❌ No lazy loading on 7 images
@@ -299,33 +331,39 @@ AGmedia.com/
 **Unique Content:**
 
 1. **Page Header** (`section.page-header`)
+
    - H1: "Simple, Transparent Pricing"
    - Tagline: "Affordable web solutions"
 
 2. **Pricing Section** (`section.pricing-section`)
+
    - **Inline `<style>` block** (156 lines of CSS!)
    - Section header: "Choose the Right Plan"
    - 3 pricing cards:
-   
+
    **Card 1: Starter Website**
+
    - Price: $1,499 (one-time)
    - 7 features listed
    - CTA: "Get Started"
-   
+
    **Card 2: Growth Package** (featured/most popular)
+
    - Price: $2,499 (one-time)
    - 8 features listed
    - Special styling (border, "Most Popular" badge)
    - CTA: "Get Started"
-   
+
    **Card 3: Ongoing Support**
+
    - Price: $99/month
    - 7 features listed
    - CTA: "Get Started"
-   
+
    - Pricing note: "All packages can be customized..."
 
 3. **Pricing FAQ Section** (`section.pricing-faq`)
+
    - H2: "Pricing FAQs"
    - 5 FAQ items:
      - Hidden fees? (No)
@@ -339,10 +377,12 @@ AGmedia.com/
 5. **Footer** (identical)
 
 **Page Meta:**
+
 - Title: "Pricing - AGmedia"
 - No description/keywords
 
 **Issues Found:**
+
 - 🔴 **CRITICAL**: 156 lines of inline CSS in `<style>` tag
 - ❌ CSS/JS references
 - ❌ Inline styles in CTA
@@ -356,17 +396,20 @@ AGmedia.com/
 ### Repeated Components:
 
 1. **Header/Navigation**
+
    - Identical on all 5 pages
    - Desktop nav with 6 links
    - Mobile hamburger menu
    - Same structure, different `.active` class
 
 2. **Mobile Navigation**
+
    - Identical overlay menu
    - Same 6 links
    - Toggle functionality
 
 3. **Footer**
+
    - 100% identical across all pages
    - 3 link columns
    - Social links
@@ -397,6 +440,7 @@ index.html (Single Page)
 ### Navigation Changes Required:
 
 **Old Links → New Anchors:**
+
 - `href="index.html"` → `href="#home"`
 - `href="services.html"` → `href="#services"`
 - `href="approach.html"` → `href="#approach"`
@@ -411,10 +455,12 @@ index.html (Single Page)
 ### Assets Inventory:
 
 **CSS Files:**
+
 - ✅ `main.css` (1,168 lines) - PRIMARY FILE
 - ⚠️ `pricing.html` has 156 lines inline - MUST EXTRACT
 
 **JavaScript Files:**
+
 - ✅ `main.js` (178 lines) - No changes needed
 - Smooth scroll already implemented
 - Testimonial slider works
@@ -422,11 +468,13 @@ index.html (Single Page)
 - Form handling works
 
 **Images:**
+
 - 1 local image: `images/D2D10473-4AB2-47DF-9531-09069BF42FAD_1_105_c.jpeg`
 - ~20+ Unsplash images (external CDN)
 - ⚠️ Consider downloading for production
 
 **Fonts:**
+
 - Google Fonts: Poppins (weights: 300, 400, 500, 600, 700)
 - External CDN dependency
 
@@ -437,11 +485,13 @@ index.html (Single Page)
 ### Critical (All Pages Except index.html):
 
 1. **File Path References**
+
    - ❌ `href="main.css"` → Should be `href="./main.css"`
    - ❌ `src="main.js"` → Should be `src="./main.js"`
    - Files: services.html, approach.html, client-stories.html, pricing.html
 
 2. **Inline Styles in CTA Sections**
+
    - All pages have same inline styles
    - Should use `.cta-background` and `.cta-overlay` classes (already in index.html)
 
@@ -452,10 +502,12 @@ index.html (Single Page)
 ### High Priority:
 
 4. **Missing Meta Tags**
+
    - Only index.html has description/keywords
    - Services, approach, client-stories, pricing need SEO meta tags
 
 5. **Image Optimization**
+
    - No lazy loading on services.html, approach.html, client-stories.html, pricing.html
    - Alt text could be more descriptive
 
@@ -468,6 +520,7 @@ index.html (Single Page)
 ## Content Metrics
 
 ### Word Count by Page:
+
 - **index.html**: ~300 words
 - **services.html**: ~450 words
 - **approach.html**: ~600 words
@@ -476,6 +529,7 @@ index.html (Single Page)
 - **Total**: ~2,550 words
 
 ### Section Count:
+
 - Hero: 1
 - Services: 2 sections (overview + detail)
 - About: 1
@@ -487,6 +541,7 @@ index.html (Single Page)
 - **Total Unique Sections**: 13
 
 ### Form Instances:
+
 - 5 contact forms (1 per page)
 - All identical except pricing.html dropdown options
 - Will consolidate to 1 form
@@ -496,6 +551,7 @@ index.html (Single Page)
 ## Consolidation Strategy
 
 ### Step 1: Fix All File References (Do First!)
+
 ```bash
 # Fix services.html, approach.html, client-stories.html, pricing.html
 # Change main.css → ./main.css
@@ -503,6 +559,7 @@ index.html (Single Page)
 ```
 
 ### Step 2: Extract Pricing CSS
+
 ```bash
 # Copy 156 lines from pricing.html <style> tag
 # Add to main.css
@@ -510,6 +567,7 @@ index.html (Single Page)
 ```
 
 ### Step 3: Fix Inline Styles (All CTA Sections)
+
 ```bash
 # Replace inline styles with classes:
 # class="container cta-background"
@@ -517,6 +575,7 @@ index.html (Single Page)
 ```
 
 ### Step 4: Add Missing Meta Tags
+
 ```bash
 # Add description/keywords to:
 # - services.html
@@ -526,6 +585,7 @@ index.html (Single Page)
 ```
 
 ### Step 5: Content Consolidation (Phase 2)
+
 ```bash
 # Copy unique content from each page into index.html
 # Add section IDs (#services, #approach, #clients, #pricing)
@@ -534,6 +594,7 @@ index.html (Single Page)
 ```
 
 ### Step 6: Update Navigation (Phase 3)
+
 ```bash
 # Change all href="*.html" to href="#section"
 # Update footer links
@@ -568,7 +629,7 @@ Before we can safely consolidate pages, we must fix these issues:
 5. **Add lazy loading** to all images
 6. **Test** that all pages still work correctly
 
-**Estimated Time**: 1-2 hours  
+**Estimated Time**: 1-2 hours
 **Commits**: 3-4 atomic commits
 
 Then we'll be ready for Phase 2: Content Consolidation!

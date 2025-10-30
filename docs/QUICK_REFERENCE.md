@@ -12,33 +12,35 @@ Keep this handy while working on the project!
 
 ## ⌨️ Essential Keyboard Shortcuts
 
-| Action | Mac | Windows/Linux |
-|--------|-----|---------------|
-| Command Palette | `Cmd+Shift+P` | `Ctrl+Shift+P` |
-| Quick File Open | `Cmd+P` | `Ctrl+P` |
-| Toggle Sidebar | `Cmd+B` | `Ctrl+B` |
-| Toggle Terminal | Cmd+` | Ctrl+` |
-| Toggle Comment | `Cmd+/` | `Ctrl+/` |
-| Format Document | `Shift+Alt+F` | `Shift+Alt+F` |
-| Go to Line | `Cmd+G` | `Ctrl+G` |
-| Find in Files | `Cmd+Shift+F` | `Ctrl+Shift+F` |
-| Multi-cursor | `Alt+Click` | `Alt+Click` |
-| Move Line | `Alt+Up/Down` | `Alt+Up/Down` |
-| Copy Line | `Shift+Alt+Up/Down` | `Shift+Alt+Up/Down` |
-| Select Next | `Cmd+D` | `Ctrl+D` |
-| Problems Panel | `Cmd+Shift+M` | `Ctrl+Shift+M` |
-| Source Control | `Cmd+Shift+G` | `Ctrl+Shift+G` |
-| Live Server | `Alt+L, Alt+O` | `Alt+L, Alt+O` |
+| Action          | Mac                 | Windows/Linux       |
+| --------------- | ------------------- | ------------------- |
+| Command Palette | `Cmd+Shift+P`       | `Ctrl+Shift+P`      |
+| Quick File Open | `Cmd+P`             | `Ctrl+P`            |
+| Toggle Sidebar  | `Cmd+B`             | `Ctrl+B`            |
+| Toggle Terminal | Cmd+`               | Ctrl+`              |
+| Toggle Comment  | `Cmd+/`             | `Ctrl+/`            |
+| Format Document | `Shift+Alt+F`       | `Shift+Alt+F`       |
+| Go to Line      | `Cmd+G`             | `Ctrl+G`            |
+| Find in Files   | `Cmd+Shift+F`       | `Ctrl+Shift+F`      |
+| Multi-cursor    | `Alt+Click`         | `Alt+Click`         |
+| Move Line       | `Alt+Up/Down`       | `Alt+Up/Down`       |
+| Copy Line       | `Shift+Alt+Up/Down` | `Shift+Alt+Up/Down` |
+| Select Next     | `Cmd+D`             | `Ctrl+D`            |
+| Problems Panel  | `Cmd+Shift+M`       | `Ctrl+Shift+M`      |
+| Source Control  | `Cmd+Shift+G`       | `Ctrl+Shift+G`      |
+| Live Server     | `Alt+L, Alt+O`      | `Alt+L, Alt+O`      |
 
 ## 📝 Code Snippets (Type + Tab)
 
 ### HTML
+
 - `html5` → HTML5 boilerplate
 - `section-container` → Section with container div
 - `card` → Card component
 - `nav` → Navigation structure
 
 ### CSS
+
 - `csscomment` → Section comment header
 - `mq` → Media query
 - `flexcenter` → Flexbox centering
@@ -47,6 +49,7 @@ Keep this handy while working on the project!
 - `transition` → Transition property
 
 ### JavaScript
+
 - `addevent` → Event listener
 - `qs` → querySelector
 - `qsa` → querySelectorAll
@@ -69,6 +72,7 @@ perf:     Performance improvements
 ```
 
 ### Commit Format
+
 ```bash
 type: short description (max 50 chars)
 
@@ -79,6 +83,7 @@ Optional footer for issue references.
 ```
 
 ### Example Commits
+
 ```bash
 git commit -m "feat: add smooth scroll navigation"
 git commit -m "refactor: consolidate CSS into single file"
@@ -136,17 +141,20 @@ Or: Alt+L, Alt+C
 ## 🧪 Testing Checklist
 
 ### Before Each Commit
+
 - [ ] Code passes ESLint/Stylelint (check Problems panel)
 - [ ] No console.log or debugger statements
 - [ ] Code is formatted (auto-formats on save)
 - [ ] Commit message follows format
 
 ### Before Each Push
+
 - [ ] All commits have proper messages
 - [ ] Code runs without errors
 - [ ] Live Server shows changes correctly
 
 ### Before Phase Sign-off
+
 - [ ] All quality gates passed (see quality-gates-checklist.md)
 - [ ] Cross-browser tested
 - [ ] Mobile responsive
@@ -155,6 +163,7 @@ Or: Alt+L, Alt+C
 ## 📚 Quick Documentation Links
 
 ### Your Project Docs
+
 - [Implementation Plan](docs/conversion/implementation-plan.md) - Your roadmap
 - [Quality Gates](docs/conversion/quality-gates-checklist.md) - Testing requirements
 - [Atomic Commits](docs/conversion/atomic-commits-guide.md) - Git best practices
@@ -162,6 +171,7 @@ Or: Alt+L, Alt+C
 - [Setup Complete](docs/setup-complete.md) - Overview
 
 ### External Resources
+
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [VS Code Tips](https://code.visualstudio.com/docs/getstarted/tips-and-tricks)
 - [Emmet Cheat Sheet](https://docs.emmet.io/cheat-sheet/)
@@ -170,17 +180,20 @@ Or: Alt+L, Alt+C
 ## 🐛 Quick Troubleshooting
 
 ### Extensions Not Working
+
 ```bash
 Cmd+Shift+P → "Developer: Reload Window"
 ```
 
 ### Linters Not Running
+
 ```bash
 npm install -g eslint stylelint stylelint-config-standard
 Then: Cmd+Shift+P → "Developer: Reload Window"
 ```
 
 ### Git Hooks Not Running
+
 ```bash
 cd docs/conversion/git-hooks
 chmod +x install-hooks.sh
@@ -188,11 +201,13 @@ chmod +x install-hooks.sh
 ```
 
 ### Live Server Not Starting
+
 - Check if port 8000 is in use
 - Change port in `.vscode/settings.json`
 - Restart VS Code
 
 ### Format on Save Not Working
+
 1. Right-click in file → "Format Document With..."
 2. Select "Prettier - Code formatter"
 3. Check "Configure Default Formatter"
@@ -242,4 +257,4 @@ Everything is set up and ready. Follow the [Implementation Plan](docs/conversion
 
 ---
 
-*Print this reference card or keep it open in a second monitor!*
+_Print this reference card or keep it open in a second monitor!_

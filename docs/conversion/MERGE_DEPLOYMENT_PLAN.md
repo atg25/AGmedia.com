@@ -1,7 +1,7 @@
 # Phase 7: Merge & Deployment Plan
 
-**Date:** October 30, 2025  
-**Status:** ✅ READY TO EXECUTE  
+**Date:** October 30, 2025
+**Status:** ✅ READY TO EXECUTE
 **Branch:** feature/single-page-conversion → main
 
 ---
@@ -9,6 +9,7 @@
 ## Pre-Merge Checklist ✅
 
 ### Code Quality
+
 - [x] All files validated (HTML, CSS, JS)
 - [x] ESLint: 0 errors, 0 warnings
 - [x] No console.log or debugger statements
@@ -16,6 +17,7 @@
 - [x] Working tree clean
 
 ### Testing
+
 - [x] Automated tests passed (100%)
 - [x] All links verified (33 hash links)
 - [x] All section IDs present (7 sections)
@@ -23,6 +25,7 @@
 - [x] Manual testing checklist provided
 
 ### Documentation
+
 - [x] Technical debt audit complete
 - [x] Site inventory documented
 - [x] Testing report created
@@ -30,6 +33,7 @@
 - [x] All phases documented
 
 ### Git History
+
 - [x] 11 atomic commits
 - [x] All commit messages valid
 - [x] No merge conflicts
@@ -50,6 +54,7 @@ f05983a fix: standardize all pages before consolidation
 ```
 
 **Plus 4 commits from main branch prep:**
+
 - 4876281 fix: resolve critical technical debt issues
 - 7e2a5e9 docs: add quick reference card
 - 5f150d1 docs: update README
@@ -60,18 +65,21 @@ f05983a fix: standardize all pages before consolidation
 ## Merge Strategy
 
 ### Recommended: No-Fast-Forward Merge
+
 ```bash
 git checkout main
 git merge feature/single-page-conversion --no-ff -m "Merge: Convert to single-page application (v2.0.0)"
 ```
 
 **Why `--no-ff`?**
+
 - Preserves feature branch history
 - Creates clear merge commit
 - Easy to identify all conversion changes
 - Simple to revert if needed
 
 ### Alternative: Squash Merge
+
 ```bash
 git checkout main
 git merge feature/single-page-conversion --squash
@@ -84,6 +92,7 @@ See docs/conversion/FINAL_QA_REPORT.md for details."
 ```
 
 **Why squash?**
+
 - Cleaner main branch history
 - Single commit for entire feature
 - Easier to understand at high level
@@ -95,6 +104,7 @@ See docs/conversion/FINAL_QA_REPORT.md for details."
 ## Merge Command (Step-by-Step)
 
 ### Step 1: Update Main Branch
+
 ```bash
 # Make sure main is up to date
 git checkout main
@@ -102,6 +112,7 @@ git pull origin main
 ```
 
 ### Step 2: Review Changes One More Time
+
 ```bash
 # See what will be merged
 git log main..feature/single-page-conversion --oneline
@@ -109,12 +120,14 @@ git diff main...feature/single-page-conversion --stat
 ```
 
 ### Step 3: Perform Merge
+
 ```bash
 # Merge with no-fast-forward (preserves history)
 git merge feature/single-page-conversion --no-ff
 ```
 
 **Merge commit message will be:**
+
 ```
 Merge branch 'feature/single-page-conversion'
 
@@ -131,6 +144,7 @@ See docs/conversion/FINAL_QA_REPORT.md for full details.
 ```
 
 ### Step 4: Tag the Release
+
 ```bash
 # Create version tag
 git tag -a v2.0.0 -m "Version 2.0.0: Single-page application
@@ -154,6 +168,7 @@ git show v2.0.0
 ```
 
 ### Step 5: Push to Remote
+
 ```bash
 # Push main branch
 git push origin main
@@ -163,6 +178,7 @@ git push origin --tags
 ```
 
 ### Step 6: Verify on GitHub
+
 - Check commit history on GitHub
 - Verify tag appears in Releases
 - Confirm backup branch still exists
@@ -174,12 +190,14 @@ git push origin --tags
 ### Immediate (Today)
 
 1. **Verify Merge**
+
    ```bash
    git log --oneline --graph -15
    git tag -l
    ```
 
 2. **Keep Feature Branch (Optional)**
+
    ```bash
    # Don't delete yet - keep for reference
    # Can delete later if confident
@@ -196,12 +214,14 @@ git push origin --tags
 ### Short-term (This Week)
 
 4. **Deploy to Staging**
+
    - Test in production-like environment
    - Run Lighthouse tests
    - Complete manual testing checklist
    - Verify on real devices
 
 5. **Configure Form Backend**
+
    - Set up FormSpree or Netlify Forms
    - Test form submissions
    - Set up email notifications
@@ -214,11 +234,13 @@ git push origin --tags
 ### Long-term (This Month)
 
 7. **Deploy to Production**
+
    - Deploy from main branch
    - Set up DNS if needed
    - Configure HTTPS/SSL
 
 8. **Monitor Performance**
+
    - Run Lighthouse audits
    - Check Google Analytics
    - Monitor for errors
@@ -235,6 +257,7 @@ git push origin --tags
 ### If Issues Found Pre-Deployment
 
 **Option 1: Fix Forward**
+
 ```bash
 # Create hotfix branch
 git checkout -b hotfix/fix-issue main
@@ -247,6 +270,7 @@ git push origin main
 ```
 
 **Option 2: Revert Merge**
+
 ```bash
 # Find merge commit
 git log --oneline -5
@@ -259,6 +283,7 @@ git push origin main
 ### If Issues Found Post-Deployment
 
 **Option 1: Deploy Backup Branch**
+
 ```bash
 # Emergency rollback to multi-page site
 git checkout backup/pre-conversion
@@ -267,6 +292,7 @@ git checkout -b hotfix/emergency-rollback
 ```
 
 **Option 2: Cherry-Pick Fixes**
+
 ```bash
 # If only small issues
 git checkout main
@@ -281,11 +307,12 @@ git push origin main
 ### Recommended Platforms
 
 #### 1. Netlify (Recommended)
+
 ```yaml
 # netlify.toml
 [build]
   publish = "src"
-  
+
 [build.processing]
   skip_processing = false
 
@@ -298,6 +325,7 @@ git push origin main
 ```
 
 **Features:**
+
 - Free hosting
 - Auto-deploy from Git
 - Built-in form handling
@@ -306,13 +334,14 @@ git push origin main
 - CDN included
 
 #### 2. GitHub Pages
+
 ```yaml
 # .github/workflows/deploy.yml
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   deploy:
@@ -327,12 +356,14 @@ jobs:
 ```
 
 **Features:**
+
 - Free hosting
 - Custom domain support
 - HTTPS/SSL automatic
 - Git integration
 
 #### 3. Vercel
+
 ```json
 {
   "version": 2,
@@ -346,6 +377,7 @@ jobs:
 ```
 
 **Features:**
+
 - Free hosting
 - Auto-deploy from Git
 - Global CDN
@@ -358,25 +390,28 @@ jobs:
 ### If Using Custom Domain
 
 1. **Add DNS Records**
+
    ```
    Type: A
    Name: @
    Value: [Your hosting provider IP]
-   
+
    Type: CNAME
    Name: www
    Value: [Your hosting provider domain]
    ```
 
 2. **Configure SSL**
+
    - Most hosts provide automatic SSL (Let's Encrypt)
    - Force HTTPS redirect
 
 3. **Test Domain**
+
    ```bash
    # Check DNS propagation
    dig yourdomain.com
-   
+
    # Test SSL
    curl -I https://yourdomain.com
    ```
@@ -386,12 +421,14 @@ jobs:
 ## Success Metrics
 
 ### Technical Metrics
+
 - **Page Load Time:** < 3 seconds
 - **Lighthouse Score:** > 90 across all categories
 - **Mobile Usability:** 100%
 - **Accessibility:** WCAG AA compliant
 
 ### Business Metrics
+
 - **Bounce Rate:** < 50%
 - **Time on Site:** > 2 minutes
 - **Form Submissions:** Track conversions
@@ -402,6 +439,7 @@ jobs:
 ## Communication Plan
 
 ### Internal Team
+
 ```
 Subject: Site Conversion Complete - Ready for Deployment
 
@@ -427,6 +465,7 @@ Questions? Let's discuss.
 ```
 
 ### External Stakeholders
+
 ```
 Subject: Website Update - Improved Performance & Experience
 
@@ -528,18 +567,21 @@ git push origin --delete feature/single-page-conversion
 ## Support & Maintenance
 
 ### Weekly Tasks
+
 - Monitor analytics
 - Check for broken links
 - Review form submissions
 - Update content as needed
 
 ### Monthly Tasks
+
 - Performance audits (Lighthouse)
 - Security updates
 - Backup site files
 - Review user feedback
 
 ### Quarterly Tasks
+
 - Content refresh
 - Feature additions
 - Design improvements
@@ -552,6 +594,7 @@ git push origin --delete feature/single-page-conversion
 You've successfully completed the single-page application conversion!
 
 **What you've achieved:**
+
 - ✅ 11 perfect atomic commits
 - ✅ 56% page weight reduction
 - ✅ Enhanced user experience
@@ -564,9 +607,9 @@ You've successfully completed the single-page application conversion!
 
 ---
 
-**Plan created:** October 30, 2025  
-**Status:** ✅ READY TO EXECUTE  
-**Risk Level:** 🟢 LOW (Backup exists, rollback plan ready)  
+**Plan created:** October 30, 2025
+**Status:** ✅ READY TO EXECUTE
+**Risk Level:** 🟢 LOW (Backup exists, rollback plan ready)
 **Confidence:** 💯 HIGH (All tests passed, code quality excellent)
 
 **Let's ship it!** 🚀

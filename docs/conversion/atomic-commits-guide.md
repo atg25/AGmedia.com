@@ -1,7 +1,9 @@
 # Atomic Commits Guide
+
 ## Single-Page Conversion Project
 
 **Atomic commits** = One logical change per commit. Each commit should:
+
 - Be self-contained and complete
 - Pass all tests
 - Have a clear, descriptive message
@@ -244,6 +246,7 @@ git commit -m "fix: update root redirect for new structure"
 ## 📝 Commit Message Format
 
 ### **Structure:**
+
 ```
 <type>(<scope>): <subject>
 
@@ -253,6 +256,7 @@ git commit -m "fix: update root redirect for new structure"
 ```
 
 ### **Types:**
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation only
@@ -266,6 +270,7 @@ git commit -m "fix: update root redirect for new structure"
 - `deploy`: Deployment changes
 
 ### **Scope (optional):**
+
 - `nav`: Navigation
 - `hero`: Hero section
 - `services`: Services section
@@ -276,17 +281,20 @@ git commit -m "fix: update root redirect for new structure"
 - etc.
 
 ### **Subject:**
+
 - Use imperative mood ("add" not "added")
 - Don't capitalize first letter
 - No period at the end
 - Limit to 50 characters
 
 ### **Body (optional but recommended):**
+
 - Explain WHAT and WHY, not HOW
 - Wrap at 72 characters
 - Separate from subject with blank line
 
 ### **Footer (optional):**
+
 - Reference issues: `Closes #123`
 - Breaking changes: `BREAKING CHANGE: description`
 
