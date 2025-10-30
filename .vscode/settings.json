@@ -14,7 +14,7 @@
   "editor.guides.bracketPairs": true,
   "editor.minimap.enabled": true,
   "editor.rulers": [80, 120],
-  
+
   // Files
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
@@ -29,42 +29,39 @@
     "**/.DS_Store": true,
     "**/node_modules": true
   },
-  
+
   // HTML
   "html.format.wrapLineLength": 120,
   "html.format.indentInnerHtml": true,
   "html.format.wrapAttributes": "auto",
-  
+
   // CSS
   "css.validate": true,
   "css.lint.unknownAtRules": "ignore",
   "stylelint.enable": true,
   "stylelint.validate": ["css", "scss", "less"],
-  
+
   // JavaScript
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.suggest.autoImports": true,
-  
+
   // ESLint
   "eslint.enable": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact"
-  ],
-  
+  "eslint.validate": ["javascript", "javascriptreact"],
+
   // Prettier
   "prettier.singleQuote": true,
   "prettier.semi": true,
   "prettier.trailingComma": "es5",
   "prettier.tabWidth": 2,
-  
+
   // Git
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "git.autofetch": true,
   "gitlens.codeLens.enabled": true,
   "gitlens.currentLine.enabled": true,
-  
+
   // Live Server
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.port": 8000,
@@ -72,22 +69,17 @@
   "liveServer.settings.CustomBrowser": "chrome",
   "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
   "liveServer.settings.NoBrowser": false,
-  "liveServer.settings.ignoreFiles": [
-    ".vscode/**",
-    "**/*.scss",
-    "**/*.sass",
-    "**/*.ts"
-  ],
-  
+  "liveServer.settings.ignoreFiles": [".vscode/**", "**/*.scss", "**/*.sass", "**/*.ts"],
+
   // Markdown
   "markdownlint.config": {
     "MD033": false,
     "MD013": false
   },
-  
+
   // Terminal
   "terminal.integrated.defaultProfile.osx": "zsh",
-  
+
   // Search
   "search.exclude": {
     "**/node_modules": true,
@@ -95,13 +87,13 @@
     "**/dist": true,
     "**/build": true
   },
-  
+
   // Emmet
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
   "emmet.triggerExpansionOnTab": true,
-  
+
   // GitHub Copilot
   "github.copilot.enable": {
     "*": true,

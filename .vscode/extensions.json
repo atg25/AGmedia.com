@@ -5,26 +5,26 @@
     "formulahendry.auto-rename-tag",
     "ecmel.vscode-html-css",
     "celianriboulet.webvalidator",
-    
+
     // CSS & Styling
     "stylelint.vscode-stylelint",
     "pranaygp.vscode-css-peek",
-    
+
     // JavaScript & Formatting
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    
+
     // Git Integration
     "eamodio.gitlens",
     "mhutchie.git-graph",
     "donjayamanne.githistory",
-    
+
     // Live Server
     "ritwickdey.liveserver",
-    
+
     // Markdown
     "davidanson.vscode-markdownlint",
-    
+
     // GitHub Integration
     "github.copilot",
     "github.copilot-chat",

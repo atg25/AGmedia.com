@@ -11,25 +11,17 @@
   },
   "Query Selector": {
     "prefix": "qs",
-    "body": [
-      "const ${1:element} = document.querySelector('${2:selector}');"
-    ],
+    "body": ["const ${1:element} = document.querySelector('${2:selector}');"],
     "description": "Query selector"
   },
   "Query Selector All": {
     "prefix": "qsa",
-    "body": [
-      "const ${1:elements} = document.querySelectorAll('${2:selector}');"
-    ],
+    "body": ["const ${1:elements} = document.querySelectorAll('${2:selector}');"],
     "description": "Query selector all"
   },
   "ForEach": {
     "prefix": "foreach",
-    "body": [
-      "${1:array}.forEach(${2:item} => {",
-      "  $0",
-      "});"
-    ],
+    "body": ["${1:array}.forEach(${2:item} => {", "  $0", "});"],
     "description": "ForEach loop"
   },
   "Intersection Observer": {
