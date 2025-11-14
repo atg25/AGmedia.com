@@ -4,7 +4,7 @@ A professional web development service website focused on providing friendly, lo
 
 ## 🌐 Live Demo
 
-Visit the live site: [AGmedia.com](https://agard.github.io/AGmedia.com/)
+**Visit the live site: [https://atg25.github.io/AGmedia.com/](https://atg25.github.io/AGmedia.com/)**
 
 ## 📋 About
 
