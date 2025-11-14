@@ -1,0 +1,12 @@
+{
+  "defaults": {
+    "timeout": 30000,
+    "viewport": {
+      "width": 1280,
+      "height": 1024
+    },
+    "standard": "WCAG2AA",
+    "runners": ["axe"]
+  },
+  "urls": ["http://localhost:8000", "http://localhost:8000/index.html"]
+}

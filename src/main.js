@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForms();
   initTestimonialSlider();
   initMobileNavigation();
+  initServiceCardToggles();
 });
 
 /**
@@ -26,7 +27,9 @@ function initSmoothScrolling() {
       e.preventDefault();
 
       const targetId = this.getAttribute('href');
-      if (targetId === '#') {return;}
+      if (targetId === '#') {
+        return;
+      }
 
       // If mobile menu is open, close it
       if (document.querySelector('.mobile-nav').classList.contains('active')) {
@@ -107,7 +110,7 @@ function initContactForms() {
   const contactForms = document.querySelectorAll('.contact-form');
 
   contactForms.forEach(form => {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', e => {
       e.preventDefault();
 
       // Get form values
@@ -228,4 +231,69 @@ function toggleMobileNav() {
   mobileNavToggle.classList.toggle('active');
   mobileNav.classList.toggle('active');
   document.body.classList.toggle('no-scroll');
+}
+
+/**
+ * Initialize service modal functionality
+ */
+function initServiceCardToggles() {
+  const modalButtons = document.querySelectorAll('.open-modal');
+  const modals = document.querySelectorAll('.service-modal');
+
+  // Open modal when button clicked
+  modalButtons.forEach(button => {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      const modalId = this.getAttribute('data-modal');
+      const modal = document.getElementById(modalId);
+
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      }
+    });
+  });
+
+  // Close modal functionality
+  modals.forEach(modal => {
+    // Close button
+    const closeBtn = modal.querySelector('.modal-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        closeModal(modal);
+      });
+    }
+
+    // Click overlay to close
+    const overlay = modal.querySelector('.modal-overlay');
+    if (overlay) {
+      overlay.addEventListener('click', () => {
+        closeModal(modal);
+      });
+    }
+
+    // CTA button closes modal
+    const ctaButton = modal.querySelector('.modal-cta');
+    if (ctaButton) {
+      ctaButton.addEventListener('click', () => {
+        closeModal(modal);
+      });
+    }
+
+    // ESC key to close
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal(modal);
+      }
+    });
+  });
+
+  /**
+   * Close modal helper function
+   * @param {HTMLElement} modal - The modal element to close
+   */
+  function closeModal(modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+  }
 }

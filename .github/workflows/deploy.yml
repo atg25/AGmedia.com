@@ -12,11 +12,39 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
+  quality-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run HTML validation
+        run: npm run lint:html
+
+      - name: Run JavaScript linter
+        run: npm run lint:js
+
+      - name: Run CSS linter
+        run: npm run lint:css
+
+      - name: Format check
+        run: npx prettier --check "src/**/*.{html,css,js}"
+
   deploy:
+    needs: quality-gates
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -31,7 +59,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: 'src'
 
       - name: Deploy to GitHub Pages
         id: deployment

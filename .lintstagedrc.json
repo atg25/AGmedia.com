@@ -1,0 +1,6 @@
+{
+  "*.{js,jsx}": ["eslint --fix", "npx prettier --write"],
+  "*.{css,scss}": ["stylelint --fix", "npx prettier --write"],
+  "*.html": ["html-validate", "npx prettier --write"],
+  "*.{json,md}": ["npx prettier --write"]
+}
