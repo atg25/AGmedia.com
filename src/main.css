@@ -1327,30 +1327,38 @@ nav {
   box-shadow: var(--box-shadow);
   margin-bottom: 60px;
   overflow: hidden;
+  border: 1px solid #e8eef7;
+  transition: box-shadow 0.3s ease;
+}
+
+.case-study:hover {
+  box-shadow: 0 8px 24px rgba(74, 111, 220, 0.12);
 }
 
 .case-study-header {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 30px;
-  padding: 30px;
+  padding: 30px 80px 30px 30px;
   background-color: var(--light-bg);
   cursor: pointer;
   user-select: none;
   transition:
     background-color 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
   position: relative;
   border: none;
   font-family: inherit;
   font-size: inherit;
   width: 100%;
   text-align: left;
+  border-bottom: 2px solid transparent;
 }
 
 .case-study-header:hover {
-  background-color: #f0f3f9;
-  box-shadow: inset 0 2px 8px rgba(74, 111, 220, 0.08);
+  background: linear-gradient(135deg, #f5f8fc 0%, #f0f5fa 100%);
+  box-shadow: inset 0 -2px 0 var(--primary-color);
 }
 
 .case-study-header:focus {
@@ -1362,16 +1370,32 @@ nav {
 .case-study-header:after {
   content: '▼';
   position: absolute;
-  right: 30px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--primary-color);
-  font-size: 0.875rem;
-  transition: transform 0.3s ease;
+  right: 20px;
+  bottom: 20px;
+  transform: rotate(0deg);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: bold;
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s ease;
+  background-color: var(--primary-color);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.case-study-header:hover:after {
+  background-color: var(--secondary-color);
 }
 
 .case-study[data-expanded='true'] .case-study-header:after {
-  transform: translateY(-50%) rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .case-study-image img {
@@ -1421,12 +1445,14 @@ nav {
 }
 
 .case-study-content {
-  padding: 30px;
+  padding: 0;
   max-height: 0;
   overflow: hidden;
   transition:
-    max-height 0.4s ease-in-out,
-    padding 0.4s ease-in-out;
+    max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-top: 1px solid #e8eef7;
+  background-color: #fafbfc;
 }
 
 .case-study[data-expanded='true'] .case-study-content {
@@ -1445,16 +1471,23 @@ nav {
 .results h3 {
   color: var(--primary-color);
   margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(74, 111, 220, 0.1);
 }
 
 .solution ul {
-  padding-left: 20px;
+  padding-left: 0;
+  list-style: none;
 }
 
 .solution li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   position: relative;
   list-style-type: none;
+  padding-left: 28px;
+  line-height: 1.6;
 }
 
 .solution li:before {
@@ -1462,8 +1495,10 @@ nav {
   color: var(--primary-color);
   font-weight: bold;
   display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+  position: absolute;
+  left: 0;
+  width: 20px;
+  text-align: center;
 }
 
 .results-grid {
@@ -1474,15 +1509,31 @@ nav {
 }
 
 .result-stat {
-  background-color: var(--light-bg);
-  padding: 20px;
+  background: linear-gradient(135deg, #f5f8fc 0%, #f0f5fa 100%);
+  padding: 25px;
   border-radius: var(--border-radius);
+  border: 1px solid #e8eef7;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.result-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(74, 111, 220, 0.1);
 }
 
 .result-stat h4 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--primary-color);
   margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.result-stat p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 /* Contact Form */
