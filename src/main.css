@@ -1335,6 +1335,43 @@ nav {
   gap: 30px;
   padding: 30px;
   background-color: var(--light-bg);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  position: relative;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  text-align: left;
+}
+
+.case-study-header:hover {
+  background-color: #f0f3f9;
+  box-shadow: inset 0 2px 8px rgba(74, 111, 220, 0.08);
+}
+
+.case-study-header:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: -2px;
+}
+
+/* Chevron icon for expand/collapse indicator */
+.case-study-header:after {
+  content: '▼';
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  transition: transform 0.3s ease;
+}
+
+.case-study[data-expanded='true'] .case-study-header:after {
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .case-study-image img {
@@ -1384,6 +1421,16 @@ nav {
 }
 
 .case-study-content {
+  padding: 30px;
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease-in-out,
+    padding 0.4s ease-in-out;
+}
+
+.case-study[data-expanded='true'] .case-study-content {
+  max-height: 1000px;
   padding: 30px;
 }
 

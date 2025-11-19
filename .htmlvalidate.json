@@ -15,6 +15,7 @@
     "require-csp": "off",
     "no-trailing-whitespace": "off",
     "void-style": "off",
-    "no-raw-characters": "off"
+    "no-raw-characters": "off",
+    "prefer-native-element": "off"
   }
 }
